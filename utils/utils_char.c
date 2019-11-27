@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 16:29:50 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/10/27 16:52:19 by ncolomer         ###   ########.fr       */
+/*   Updated: 2019/11/27 11:59:40 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,15 @@ int
 	return (c >= '0' && c <= '9');
 }
 
+static int
+	is_decimal_format(char f)
+{
+	return (f == 'd' || f == 'i' || f == 'u'
+		|| f == 'x' || f == 'X' || f == 'p');
+}
+
 int
 	is_str_format(char f)
 {
-	return (f == 's' || f == 'c' || f == '%');
+	return (f == 's' || f == 'c' || f == '%' || !is_decimal_format(f));
 }

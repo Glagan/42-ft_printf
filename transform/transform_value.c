@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 19:22:40 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/10/27 17:00:22 by ncolomer         ###   ########.fr       */
+/*   Updated: 2019/11/27 12:07:16 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int
 	value_is_0(t_flags *flags, char f)
 {
-	return ((f != 'd' || !flags->org_signed)
+	return (((f != 'd' && f != 'i') || !flags->org_signed)
 		&& (f != 'p' || !(long)flags->org_ptr)
 		&& ((f != 'u' && f != 'x' && f != 'X') || !flags->org_unsigned));
 }
@@ -36,7 +36,7 @@ static void
 {
 	if (flags->minus)
 		left_adjust(str, *length);
-	else if (flags->zero)
+	else if (flags->zero && f != 'c')
 		zero_pad(str, f, *length,
 			(flags->precision >= 0)
 			? flags->precision : *length);

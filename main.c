@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 00:00:38 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/11/15 21:11:33 by ncolomer         ###   ########.fr       */
+/*   Updated: 2019/11/27 11:53:16 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -760,6 +760,10 @@ int main(void)
 	PRINTF("%%.*s\t= `%.*s` (p%d)\n", 50, "456547857", 50) // {         456547857}
 	PRINTF("%%*.10s\t= `%*.10s` (w%d)\n", 8, "yrytert", 8)
 
-	printf("\n---\nwritten: ^%d\n", t);
+	#ifdef IS_FT
+		printf("\n---\nwritten: ^%d\n", t - 3);
+	# else
+		printf("\n---\nwritten: ^%d\n", t);
+	#endif
 	return (0);
 }
