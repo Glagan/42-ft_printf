@@ -6,7 +6,7 @@
 /*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 00:00:38 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/12/17 17:40:56 by ncolomer         ###   ########.fr       */
+/*   Updated: 2019/12/17 18:00:04 by ncolomer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -767,6 +767,8 @@ int main(void)
 
 	#ifdef IS_FT
 		printf("\n---\nwritten: ^%d\n", t - 3);
+		fflush(stdout);
+		while (1);
 	# else
 		printf("\n---\nwritten: ^%d\n", t);
 	#endif
